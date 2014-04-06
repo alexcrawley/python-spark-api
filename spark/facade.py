@@ -1,7 +1,5 @@
 from . import gateway
 
-__all__ = ['post_message_to_device',]
-
 
 def post_message_to_device(device_id, message):
     """
@@ -10,5 +8,5 @@ def post_message_to_device(device_id, message):
     payload = {
         'message': message,
     }
-    gateway.post_message(payload)
+    gateway.post_message(device_id, payload)
 

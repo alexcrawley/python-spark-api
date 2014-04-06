@@ -17,13 +17,11 @@ URL_TEMPLATES = {
 logger = logging.getLogger('Spark')
 
 
-def fetch(method, url_template, url_params=None, payload=None):
+def _fetch(method, url_template, url_params={}, payload=None):
     """
     Make an HTTP round-trip to Spark Cloud API
     """
     # Build URL
-    if url_params is None:
-        url_params = {}
     if not url_params.get('version', False):
         url_params['version'] = DEFAULT_VERSION
     url = url_template.expand(url_params)
@@ -53,7 +51,7 @@ def get_events(coords, amount):
 
     http://docs.sparkdevices.com/
     """
-    return fetch('GET', URL_TEMPLATES['get_events'])
+    return _fetch('GET', URL_TEMPLATES['get_events'])
 
 
 def post_message(device_id, payload, api_version=None):
@@ -67,4 +65,4 @@ def post_message(device_id, payload, api_version=None):
         'device_id': device_id,
         'version': api_version
     }
-    return fetch('POST', url_template, url_params=url_params, payload=payload)
+    return _fetch('POST', url_template, url_params=url_params, payload=payload)

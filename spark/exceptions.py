@@ -1,0 +1,2 @@
+class SparkException(Exception):
+    pass

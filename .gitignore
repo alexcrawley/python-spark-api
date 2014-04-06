@@ -1,0 +1,25 @@
+# Temporary files
+*.swp
+*.pyc
+*.swo
+*.swn
+*.*~
+.DS_Store
+*.~lock*
+
+# IDEs (boo)
+*.sqlite3
+.project
+.pydevproject
+.settings
+*.sublime-project
+*.sublime-workspace
+
+# Testing
+.coverage
+coverage.xml
+nosetests.xml
+htmlcov/*
+
+.DS_Store
+npm-debug.log

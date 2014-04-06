@@ -4,9 +4,8 @@ from setuptools import setup, find_packages
 
 setup(name='python-spark',
       version='0.1',
-      url='https://github.com/alexcrawley/python-spark',
+      url='https://github.com/alexcrawley/python-spark-api',
       author="Alex Crawley",
-      author_email="alexcrawley@outlook.com",
       description="API wrapper for Spark Cloud REST services",
       long_description=open('README.rst').read(),
       keywords="",
